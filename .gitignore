@@ -1,30 +1,48 @@
-# Eclipse.
-bin
-*.launch
-.settings
-.metadata
-.classpath
-.project
+```
+# Compiled and build artifacts
+*.class
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.out
+build/
+target/
 
-# .idea
-out
-*.ipr
-*.iws
-*.iml
-.idea
+# Dependencies
+.gradle/
+node_modules/
+venv/
+.venv/
+__pycache__/
 
-# Gradle.
-build
-.gradle
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
 
-# Other.
-eclipse
-run
+# Logs and temp files
+*.log
+*.tmp
 
-# Forge.
-forge*changelog.txt
+# System files
+.DS_Store
+Thumbs.db
+.env
+.env.local
+*.env.*
 
-*.DS_Store
+# Coverage
+coverage/
+htmlcov/
+.coverage
 
-# Useless
-src/main/java/you/are/ratted/
+# MyPy
+.mypy_cache/
+
+# PyTest
+.pytest_cache/
+```

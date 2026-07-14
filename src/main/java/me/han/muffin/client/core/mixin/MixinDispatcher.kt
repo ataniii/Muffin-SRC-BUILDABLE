@@ -109,6 +109,15 @@ object MixinDispatcher {
         Muffin.getInstance().eventManager.dispatchEvent(event)
     }
 
+    /**
+     * Dispatch player position look event
+     * @see me.han.muffin.mixin.mixins.netty.MixinNetHandlerPlayClient.onHandlePlayerPosLook
+     */
+    fun onHandlePlayerPosLook(packetIn: SPacketPlayerPosLook) {
+        val event = PacketEvent.Receive(packetIn, EventStageable.EventStage.PRE)
+        Muffin.getInstance().eventManager.dispatchEvent(event)
+    }
+
     /** end of MixinNetHandlerPlayClient **/
 
     /** end of netty mixins **/
