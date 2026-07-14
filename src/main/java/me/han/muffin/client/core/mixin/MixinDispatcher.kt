@@ -113,9 +113,10 @@ object MixinDispatcher {
      * Dispatch player position look event
      * @see me.han.muffin.mixin.mixins.netty.MixinNetHandlerPlayClient.onHandlePlayerPosLook
      */
-    fun onHandlePlayerPosLook(packetIn: SPacketPlayerPosLook) {
+    fun onHandlePlayerPosLook(packetIn: SPacketPlayerPosLook, ci: CallbackInfo) {
         val event = PacketEvent.Receive(packetIn, EventStageable.EventStage.PRE)
         Muffin.getInstance().eventManager.dispatchEvent(event)
+        if (event.isCanceled) ci.cancel()
     }
 
     /** end of MixinNetHandlerPlayClient **/
