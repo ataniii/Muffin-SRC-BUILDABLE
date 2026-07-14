@@ -107,9 +107,9 @@ public abstract class MixinNetHandlerPlayClient implements INetHandlerPlayClient
         }
     }
 
-    @Inject(method = "handlePlayerPosLook", at = @At("HEAD"))
+    @Inject(method = "handlePlayerPosLook", at = @At("HEAD"), cancellable = true)
     private void onHandlePlayerPosLook(SPacketPlayerPosLook packetIn, CallbackInfo ci) {
-        MixinDispatcher.INSTANCE.onHandlePlayerPosLook(packetIn);
+        MixinDispatcher.INSTANCE.onHandlePlayerPosLook(packetIn, ci);
     }
 
 }
